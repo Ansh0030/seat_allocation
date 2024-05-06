@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon slot="start" color="danger" size="large"  name="logo-youtube"></ion-icon>
+    <ion-title class="tittle" >Youtube</ion-title>
+    <ion-icon slot="end" size="large" name="tablet-landscape-outline"></ion-icon>
+    <ion-icon slot="end" size="large" name="notifications-outline"></ion-icon>
+    <ion-icon slot="end" size="large" name="search-outline"></ion-icon>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> 
+  <div class="swipper">
+    <ion-chip class="chip" color="dark" mode="ios" outline="true">
+      <ion-label class="label">All</ion-label>
+    </ion-chip>
+    
+    <ion-chip color="dark" class="chip" mode="ios" outline="true">
+      <ion-label class="label">Ionic</ion-label>
+    </ion-chip>
+    
+    <ion-chip class="chip" color="dark" mode="ios" outline="true">
+
+      <ion-label class="label">Gaming</ion-label>
+    </ion-chip>
+    <ion-chip class="chip" color="dark" mode="ios" outline="true">
+
+      <ion-label>Music</ion-label>
+    </ion-chip>
+    <ion-chip class="chip" color="dark" mode="ios" outline="true">
+
+      <ion-label class="label">Cars</ion-label>
+    </ion-chip>
+    <ion-chip class="chip" color="dark" mode="ios" outline="true">
+
+      <ion-label class="label">GTA V</ion-label>
+    </ion-chip>
+    <ion-chip class="chip" color="dark" mode="ios" outline="true">
+
+      <ion-label class="label">America</ion-label>
+    </ion-chip>
+    <ion-chip class="chip" color="dark" mode="ios" outline="true">
+
+      <ion-label class="label">India</ion-label>
+    </ion-chip>
+    <ion-chip class="chip" color="dark" mode="ios" outline="true">
+
+      <ion-label class="label">Bikes</ion-label>
+    </ion-chip>
+    <ion-chip class="chip" color="dark" mode="ios" outline="true">
+
+      <ion-label class="label">Television</ion-label>
+    </ion-chip>
+</div>
+
+  <ng-container *ngFor="let i of menus; ">
+    <app-video-card></app-video-card>
+  </ng-container>
+</ion-content>
