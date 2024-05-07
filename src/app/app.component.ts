@@ -7,18 +7,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   constructor() {}
+ 
+  layout1: boolean = false;
 
-  // selectedTab():boolean{
-  //   if(){
-  //     return true;
-  //   }else{
 
-  //   }
+  switchtab(value:string){
+    if(value == 'tab3'){
+      this.layout1 = true;
+    }else{
+      this.layout1 = false;
+    }
+  }
+
+  isSearchActive: boolean = false;
   
-  selectedTab : string = 'tab1' || 'tab2' || 'tab3';
-
-  click(value:string):{
-    this.selectedTab = value;
-}
+  searchClicked(e: boolean){
+   this.isSearchActive = e;
+  }
 
 }
