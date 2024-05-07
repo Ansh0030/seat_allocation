@@ -18,4 +18,6 @@ import { VideoModule } from '../video-card/video-card.module';
   ],
   declarations: [Tab1Page]
 })
-export class Tab1PageModule {}
+export class Tab1PageModule {
+
+}
