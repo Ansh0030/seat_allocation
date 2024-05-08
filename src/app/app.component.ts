@@ -28,6 +28,7 @@ export class AppComponent {
   }
 
   onClick() {
-    this.router.navigate(['/tab1']) ; // Redirect to "/tab1"
+      this.router.navigate(['/tab1']) ; // Redirect to "/tab1"
+
 }
 }
