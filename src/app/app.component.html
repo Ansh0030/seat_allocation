@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar mode="md">
-    <ion-icon *ngIf="!isSearchActive"  slot="start" color="danger" size="large"  name="logo-youtube"></ion-icon>
+    <ion-icon *ngIf="!isSearchActive" (click)="onClick()"  slot="start" color="danger" size="large"  name="logo-youtube"></ion-icon>
     <ion-title *ngIf="!isSearchActive"  class="tittle" >Youtube</ion-title>
     <ion-icon *ngIf="!isSearchActive" slot="end" size="large" name="tablet-landscape-outline"></ion-icon>
     <ion-icon *ngIf="!isSearchActive" slot="end" size="large" name="notifications-outline"></ion-icon>
