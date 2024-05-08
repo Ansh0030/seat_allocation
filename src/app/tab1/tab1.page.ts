@@ -40,4 +40,18 @@ export class Tab1Page {
     // },
   });
   }
+
+  chipValues: string[] = [
+    "All",
+    "Ionic",
+    "Gaming",
+    "Music",
+    "Cars",
+    "GTA V",
+    "America",
+    "India",
+    "Bikes",
+    "Television"
+  ];
+  
 }

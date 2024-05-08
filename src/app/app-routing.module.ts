@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { Tab4Component } from './tab4/tab4.component';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: '',
     children: [
       {
         path: 'tab1',
@@ -18,16 +19,10 @@ const routes: Routes = [
         loadChildren: () => import('../app/tab3/tab3.module').then(m => m.Tab3PageModule)
       },
       {
-        path: '',
-        redirectTo: '/tabs/tab1',
-        pathMatch: 'full'
+        path: 'tab4',
+        component: Tab4Component 
       }
     ]
-  },
-  {
-    path: '',
-    redirectTo: '/tabs/tab1',
-    pathMatch: 'full'
   }
 ];
 @NgModule({

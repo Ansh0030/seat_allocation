@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Tab1Page } from './tab1/tab1.page';
+import {Router} from "@angular/router"
 
 @Component({
   selector: 'app-root',
@@ -6,19 +8,27 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(private router: Router) { }
+ 
+  layout1: boolean = false;
 
-  // selectedTab():boolean{
-  //   if(){
-  //     return true;
-  //   }else{
 
-  //   }
+  switchtab(value:string){
+    if(value == 'tab3'){
+      this.layout1 = true;
+    }else{
+      this.layout1 = false;
+    }
+  }
+
+  isSearchActive: boolean = false;
   
-  selectedTab : string = 'tab1' || 'tab2' || 'tab3';
+  searchClicked(e: boolean){
+   this.isSearchActive = e;
+  }
 
-  click(value:string):{
-    this.selectedTab = value;
+  onClick() {
+      this.router.navigate(['/tab1']) ; // Redirect to "/tab1"
+
 }
-
 }
