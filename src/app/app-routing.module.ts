@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { Tab4Component } from './tab4/tab4.component';
 
 const routes: Routes = [
   {
@@ -19,8 +18,8 @@ const routes: Routes = [
         loadChildren: () => import('../app/tab3/tab3.module').then(m => m.Tab3PageModule)
       },
       {
-        path: 'tab4',
-        component: Tab4Component 
+        path: 'shorts',
+        loadChildren: () => import('../app/shorts/shorts-routing.module').then(m => m.ShortsPageRoutingModule),
       }
     ]
   }

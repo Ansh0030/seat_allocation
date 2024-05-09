@@ -6,7 +6,6 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { Tab4Component } from './tab4/tab4.component';
 
 
 
@@ -14,7 +13,7 @@ import { Tab4Component } from './tab4/tab4.component';
 
 
 @NgModule({
-  declarations: [AppComponent,Tab4Component],
+  declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
