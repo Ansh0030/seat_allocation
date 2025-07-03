@@ -1,0 +1,6 @@
+<div class="table-layout" [ngStyle]="{
+       'background-color': isBooked ? '#A9A9A9' : '#D3D3D3',
+       'cursor': isBooked ? 'not-allowed' : 'pointer'
+     }" (click)="onClick()">
+  🪑 Row: {{ rowNo }}
+</div>

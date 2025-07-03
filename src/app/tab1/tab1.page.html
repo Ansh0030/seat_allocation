@@ -1,38 +1,12 @@
 <ion-content>
-    <h1 style="color: black; margin-top: 60px;">Hello World</h1>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda illo magnam, ipsum ipsam nostrum
-        exercitationem
-        excepturi minima, iste obcaecati quae laboriosam reprehenderit, eaque repellendus quisquam in eius ex dolorem
-        quod.
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam incidunt voluptatum, sapiente vero nostrum
-        possimus
-        omnis rerum dignissimos quis totam, itaque illum libero harum odio quae recusandae ipsa quas fugiat?
-    </p>
-    <h1 style="color: black;">Hello World</h1>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda illo magnam, ipsum ipsam nostrum
-        exercitationem
-        excepturi minima, iste obcaecati quae laboriosam reprehenderit, eaque repellendus quisquam in eius ex dolorem
-        quod.
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam incidunt voluptatum, sapiente vero nostrum
-        possimus
-        omnis rerum dignissimos quis totam, itaque illum libero harum odio quae recusandae ipsa quas fugiat?
-    </p>
-    <h1 style="color: black;">Hello World</h1>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda illo magnam, ipsum ipsam nostrum
-        exercitationem
-        excepturi minima, iste obcaecati quae laboriosam reprehenderit, eaque repellendus quisquam in eius ex dolorem
-        quod.
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam incidunt voluptatum, sapiente vero nostrum
-        possimus
-        omnis rerum dignissimos quis totam, itaque illum libero harum odio quae recusandae ipsa quas fugiat?
-    </p>
-    <h1 style="color: black;">Hello World</h1>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda illo magnam, ipsum ipsam nostrum
-        exercitationem
-        excepturi minima, iste obcaecati quae laboriosam reprehenderit, eaque repellendus quisquam in eius ex dolorem
-        quod.
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam incidunt voluptatum, sapiente vero nostrum
-        possimus
-        omnis rerum dignissimos quis totam, itaque illum libero harum odio quae recusandae ipsa quas fugiat?
-    </p>
+    <h3 style="text-align: center;">Room Layout</h3>
+    <ion-grid>
+        <ion-row *ngFor="let row of tableGrid">
+            <ion-col size="2" *ngFor="let table of row">
+                <app-table [rowNo]="table.rowNo" [colNo]="table.colNo" [isBooked]="table.isBooked"
+                    [bookedBy]="table.bookedBy" (tableClicked)="onTableClicked(table)">
+                </app-table>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>
