@@ -13,14 +13,7 @@ const routes: Routes = [
         path: 'tab2',
         loadChildren: () => import('../app/tab2/tab2.module').then(m => m.Tab2PageModule)
       },
-      {
-        path: 'tab3',
-        loadChildren: () => import('../app/tab3/tab3.module').then(m => m.Tab3PageModule)
-      },
-      {
-        path: 'shorts',
-        loadChildren: () => import('../app/shorts/shorts-routing.module').then(m => m.ShortsPageRoutingModule),
-      }
+
     ]
   }
 ];
@@ -30,4 +23,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
