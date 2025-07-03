@@ -10,7 +10,4 @@ import Swiper from 'swiper';
 export class Tab1Page {
 
   constructor() { }
-
-
-
 }

@@ -34,8 +34,8 @@ export class AppComponent {
     this.isSearchActive = e;
   }
 
-  onClick() {
-    this.router.navigate(['/tab1']); // Redirect to "/tab1"
+  onClick(tab: String) {
+    this.switchtab('tab1');
 
   }
 
