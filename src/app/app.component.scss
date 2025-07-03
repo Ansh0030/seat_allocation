@@ -1,0 +1,46 @@
+.floating-tab-bar {
+  position: fixed;
+  right: 40rem;
+  bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.1px);
+  -webkit-backdrop-filter: blur(5.1px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.tab-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  width: 50px;
+  height: 50px;
+  margin: 0 0.4rem;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.tab-button ion-icon {
+  font-size: 20px;
+  color: black;
+}
+
+.tab-button ion-label {
+  font-size: 10px;
+  margin-top: 2px;
+  text-align: center;
+  color: grey;
+}
+
+.tab-button.active {
+  background-color: rgba(114, 114, 114, 0.3);
+}
