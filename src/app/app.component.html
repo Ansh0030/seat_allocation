@@ -3,14 +3,6 @@
     <ion-icon *ngIf="!isSearchActive" (click)="onClick()" style="padding-left: 5%;" slot="start" color="danger"
       size="large" name="logo-youtube"></ion-icon>
     <ion-title style="padding: 1% !important;" *ngIf="!isSearchActive" class="tittle">Youtube</ion-title>
-    <ion-icon class="ion-padding" *ngIf="!isSearchActive" slot="end" size="large"
-      name="tablet-landscape-outline"></ion-icon>
-    <ion-icon *ngIf="!isSearchActive" slot="end" size="large" name="notifications-outline"></ion-icon>
-    <ion-icon *ngIf="!isSearchActive" slot="end" (click)="searchClicked(true)" size="large"
-      name="search-outline"></ion-icon>
-    <ion-icon *ngIf="layout1 && !isSearchActive" slot="end" size="large" name="settings-outline"></ion-icon>
-    <ion-searchbar *ngIf="isSearchActive"></ion-searchbar>
-    <ion-icon *ngIf="isSearchActive" (click)="searchClicked(false)" slot="end" size="large" name="close"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
@@ -32,9 +24,3 @@
 
   </ion-tab-bar>
 </ion-tabs>
-
-<ion-popover trigger="click-trigger" triggerAction="click" side="top" alignment="center">
-  <ng-template>
-    <ion-content class="ion-padding">Hello World!</ion-content>
-  </ng-template>
-</ion-popover>
