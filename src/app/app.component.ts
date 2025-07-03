@@ -8,7 +8,9 @@ import { Router } from "@angular/router"
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    this.onClick('tab1');
+  }
 
   layout1: boolean = false;
 
@@ -19,15 +21,6 @@ export class AppComponent {
     this.router.navigate([`/${tab}`]);
   }
 
-
-  // switchtab(value: string) {
-  //   if (value == 'tab3') {
-  //     this.layout1 = true;
-  //   } else {
-  //     this.layout1 = false;
-  //   }
-  // }
-
   isSearchActive: boolean = false;
 
   searchClicked(e: boolean) {
@@ -36,13 +29,5 @@ export class AppComponent {
 
   onClick(tab: String) {
     this.switchtab('tab1');
-
   }
-
-  isModalOpen = false;
-
-  setOpen(isOpen: boolean) {
-    this.isModalOpen = isOpen;
-  }
-
 }
