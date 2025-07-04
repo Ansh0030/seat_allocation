@@ -1,18 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { User } from 'src/app/tab1/tab1.page';
 
-export interface User {
-  id: number;
-  name: string;
-  email: string;
-}
 
-export interface Table {
-  id: number;
-  rowNo: number;
-  colNo: number;
-  isBooked: boolean;
-  bookedBy?: User;
-}
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',

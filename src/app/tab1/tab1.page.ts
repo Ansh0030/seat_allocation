@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 export interface User {
-  id: number;
+  id: string;
   name: string;
   email: string;
 }
@@ -21,9 +21,9 @@ export interface Table {
 export class Tab1Page {
 
   users: User[] = [
-    { id: 1, name: 'Alice', email: 'alice@company.com' },
-    { id: 2, name: 'Bob', email: 'bob@company.com' },
-    { id: 3, name: 'Charlie', email: 'charlie@company.com' }
+    { id: "1", name: 'Alice', email: 'alice@company.com' },
+    { id: "2", name: 'Bob', email: 'bob@company.com' },
+    { id: "3", name: 'Charlie', email: 'charlie@company.com' }
   ];
 
   tableData: Table[] = [];

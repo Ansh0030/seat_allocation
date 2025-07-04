@@ -10,7 +10,6 @@ export class Tab2Page {
 
   constructor() { }
 
-  menus: any[] = new Array(10);
   profileForm = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
