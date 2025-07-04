@@ -2,7 +2,7 @@
     <h3 style="text-align: center; margin-top: 60px;">Room Layout</h3>
     <ion-grid>
         <ion-row *ngFor="let row of tableGrid">
-            <ion-col style="margin-bottom : 20px;" size="2" *ngFor="let table of row">
+            <ion-col style="margin-bottom : 30px;" size="2" *ngFor="let table of row">
                 <app-table [rowNo]="table.rowNo" [colNo]="table.colNo" [isBooked]="table.isBooked"
                     [bookedBy]="table.bookedBy" (tableClicked)="onTableClicked(table)">
                 </app-table>

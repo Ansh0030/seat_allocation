@@ -1,4 +1,4 @@
-<div class="table-layout" [ngStyle]="{
+<div id="hover-trigger" class="table-layout" [ngStyle]="{
        'background-color': isBooked ? '#A9A9A9' : '#D3D3D3',
        'cursor': isBooked ? 'not-allowed' : 'pointer'
      }" (click)="onClick()">
@@ -8,3 +8,13 @@
   'cursor': isBooked ? 'not-allowed' : 'pointer'
 }" (click)="onClick()">
 </div>
+
+<ion-popover trigger="hover-trigger" triggerAction="hover" backdropDismiss="">
+  <ng-template>
+    <ion-content class="ion-padding">
+      Reserved by : {{bookedBy}}
+      Row : {{rowNo}} <br>
+      Seat no : {{colNo}}
+    </ion-content>
+  </ng-template>
+</ion-popover>

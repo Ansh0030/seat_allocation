@@ -63,7 +63,7 @@ export class Tab1Page {
   onTableClicked(table: Table) {
     if (!table.isBooked) {
       table.isBooked = true;
-      table.bookedBy = this.users[0]; // Example: assign to Alice
+      table.bookedBy = this.users[0];
     }
   }
 }
