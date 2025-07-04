@@ -36,9 +36,10 @@ export class Tab1Page {
 
   generateTableData() {
     let idCounter = 1;
+    this.tableData = []; // Reset before generating
 
     for (let row = 1; row <= 6; row++) {
-      for (let col = 1; col <= 6; col++) {
+      for (let col = 1; col <= 12; col++) {
         const isBooked = Math.random() < 0.4;
         this.tableData.push({
           id: idCounter++,
@@ -54,11 +55,12 @@ export class Tab1Page {
   }
 
   chunkTableData() {
-    const chunkSize = 6;
+    const chunkSize = 12;
     this.tableGrid = Array.from({ length: 6 }, (_, i) =>
       this.tableData.slice(i * chunkSize, i * chunkSize + chunkSize)
     );
   }
+
 
   onTableClicked(table: Table) {
     if (!table.isBooked) {

@@ -1,20 +1,23 @@
+<!-- Chair / Table Layout -->
 <div id="hover-trigger" class="table-layout" [ngStyle]="{
-       'background-color': isBooked ? '#A9A9A9' : '#D3D3D3',
-       'cursor': isBooked ? 'not-allowed' : 'pointer'
-     }" (click)="onClick()">
-</div>
-<div class="chair-layout" [ngStyle]="{
   'background-color': isBooked ? '#A9A9A9' : '#D3D3D3',
   'cursor': isBooked ? 'not-allowed' : 'pointer'
+}" (click)="onClick()">
+  <div class="seat-label">{{ seatLabel }}</div>
+</div>
+
+<div class="chair-layout" [ngStyle]="{
+'background-color': isBooked ? '#A9A9A9' : '#D3D3D3',
+'cursor': isBooked ? 'not-allowed' : 'pointer'
 }" (click)="onClick()">
 </div>
 
 <ion-popover trigger="hover-trigger" triggerAction="hover" backdropDismiss="">
   <ng-template>
     <ion-content class="ion-padding">
-      Reserved by : {{bookedBy}}
-      Row : {{rowNo}} <br>
-      Seat no : {{colNo}}
+      Reserved by: {{bookedBy}}<br>
+      Row: {{rowNo}}<br>
+      Seat no: {{colNo}} ({{ seatLabel }})
     </ion-content>
   </ng-template>
 </ion-popover>

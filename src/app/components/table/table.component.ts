@@ -31,4 +31,9 @@ export class TableComponent {
       this.tableClicked.emit();
     }
   }
+  get seatLabel(): string {
+    const letters = 'ABCDEFGHIJKL';
+    return letters[this.colNo - 1]; // colNo is 1-based
+  }
+
 }

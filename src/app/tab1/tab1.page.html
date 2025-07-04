@@ -1,13 +1,28 @@
 <ion-content>
     <h3 style="text-align: center; margin-top: 60px;">Room Layout</h3>
     <ion-grid>
-        <ion-row *ngFor="let row of tableGrid">
-            <ion-col style="margin-bottom : 30px;" size="2" *ngFor="let table of row">
-                <app-table [rowNo]="table.rowNo" [colNo]="table.colNo" [isBooked]="table.isBooked"
-                    [bookedBy]="table.bookedBy" (tableClicked)="onTableClicked(table)">
-                </app-table>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
+        <ng-container *ngFor="let row of tableGrid">
+            <div style="border: 2px solid #ccc; border-radius: 10px; padding: 10px; margin-bottom: 30px;">
 
+                <!-- First visual row (tables 0-5) -->
+                <ion-row>
+                    <ion-col size="2" *ngFor="let table of row.slice(0, 6)">
+                        <app-table [rowNo]="table.rowNo" [colNo]="table.colNo" [isBooked]="table.isBooked"
+                            [bookedBy]="table.bookedBy" (tableClicked)="onTableClicked(table)">
+                        </app-table>
+                    </ion-col>
+                </ion-row>
+
+                <!-- Second visual row (tables 6-11) -->
+                <ion-row>
+                    <ion-col size="2" *ngFor="let table of row.slice(6, 12)">
+                        <app-table [rowNo]="table.rowNo" [colNo]="table.colNo" [isBooked]="table.isBooked"
+                            [bookedBy]="table.bookedBy" (tableClicked)="onTableClicked(table)">
+                        </app-table>
+                    </ion-col>
+                </ion-row>
+
+            </div>
+        </ng-container>
+    </ion-grid>
 </ion-content>
