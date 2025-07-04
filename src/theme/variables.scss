@@ -1,9 +1,9 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
 :root {
-  --ion-background-color: radial-gradient(
-    circle,
-    rgba(144, 63, 251, 0.71) 15%,
-    rgba(252, 70, 107, 0.69) 72%
+  --ion-background-color: linear-gradient(
+    1deg,
+    rgba(144, 63, 251, 1) 0%,
+    rgba(237, 69, 127, 1) 65%
   );
 }
