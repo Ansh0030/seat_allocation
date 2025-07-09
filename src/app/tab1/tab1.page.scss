@@ -6,3 +6,27 @@
   -webkit-backdrop-filter: blur(5.6px);
   border: 1px solid rgba(255, 255, 255, 0.62);
 }
+.table-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  width: 50px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin: 4px;
+  transition: background-color 1s;
+  user-select: none;
+}
+.chair-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2px;
+  width: 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-left: 14px;
+  transition: background-color 1s;
+  user-select: none;
+}

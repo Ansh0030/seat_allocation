@@ -1,10 +1,34 @@
 <ion-content>
+    <div class="glassBack" style="margin-top: 70px;">
+        <ion-grid>
+            <ion-row>
+                <ion-col size="6">
+                    <div class="table-layout" style="background-color: #31b941; cursor: pointer;">
+                    </div>
+
+                    <div class="chair-layout" style=" background-color: #31b941; cursor: pointer">
+                    </div>
+                    <p>Available</p>
+                </ion-col>
+                <ion-col size="6">
+                    <div class="table-layout" style=" background-color:  #cb3d3f; cursor: pointer">
+                    </div>
+
+                    <div class="chair-layout" style=" background-color:  #cb3d3f; cursor: pointer">
+                    </div>
+                    <p>Occupied</p>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
     <div>
-        <ion-grid style="margin-top: 60px;">
-            <ng-container *ngFor="let row of tableGrid">
+        <ion-grid style="margin-top: 10px;">
+            <ng-container *ngFor="let row of tableGrid; let i = index">
                 <div class="glassBack"
                     style="border: 2px solid #ccc; border-radius: 10px; padding: 10px; margin-bottom: 30px;">
-
+                    <div style="font-weight: bold; font-family: inter;">
+                        Row {{i+1}}
+                    </div>
                     <!-- First visual row (tables 0-5) -->
                     <ion-row>
                         <ion-col size="2" *ngFor="let table of row.slice(0, 6)">
