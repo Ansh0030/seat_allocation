@@ -16,7 +16,7 @@
         <div>
             <label for="empcode">Emp Code:</label>
             <input formControlName="empcode" placeholder="Employee Code">
-            <div
+            <div style="color: red;"
                 *ngIf="myForm.get('empcode')?.invalid && (myForm.get('empcode')?.dirty || myForm.get('empcode')?.touched)">
                 Please provide a valid Employee code.
             </div>
