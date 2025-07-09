@@ -12,7 +12,7 @@
 <ion-popover trigger="hover-trigger" triggerAction="hover">
   <ng-template>
     <ion-content class="ion-padding">
-      Reserved by: {{bookedBy}}<br>
+      Reserved by: {{bookedBy?.name}}<br>
       Row: {{rowNo}}<br>
       Seat no: {{colNo}} ({{ seatLabel }})
     </ion-content>
