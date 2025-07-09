@@ -1,33 +1,39 @@
-<ion-card style="margin-top: 60px; height: 60vh;">
+<ion-card style="margin-top: 60px; height: fit-content; overflow-y: auto;">
     <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+
         <div>
-            <label>
-                Name:
-                <input formControlName="name" placeholder="Your name">
-            </label>
-            <div *ngIf="myForm.get('name')?.invalid && (myForm.get('name')?.dirty || myForm.get('name')?.touched)">
-                Please provide a name.
-            </div>
+            <label for="row">Row No:</label>
+            <input formControlName="row" placeholder="Row">
+            <hr>
         </div>
+
         <div>
-            <label>
-                Email:
-                <input formControlName="email" placeholder="Your email">
-            </label>
-            <div *ngIf="myForm.get('email')?.invalid && (myForm.get('email')?.dirty || myForm.get('email')?.touched)">
-                Please provide a valid email address.
-            </div>
+            <label for="col">Column No:</label>
+            <input formControlName="col" placeholder="Column">
+            <hr>
         </div>
+
         <div>
-            <label>
-                Message:
-                <input formControlName="message" placeholder="Your message">
-            </label>
+            <label for="empcode">Emp Code:</label>
+            <input formControlName="empcode" placeholder="Employee Code">
             <div
-                *ngIf="myForm.get('message')?.invalid && (myForm.get('message')?.dirty || myForm.get('message')?.touched)">
-                Messages must be at least 15 characters long.
+                *ngIf="myForm.get('empcode')?.invalid && (myForm.get('empcode')?.dirty || myForm.get('empcode')?.touched)">
+                Please provide a valid Employee code.
             </div>
+            <hr>
         </div>
-        <button type="submit" [disabled]="myForm.invalid">Send</button>
+
+        <div>
+            <label for="name">Name:</label>
+            <input formControlName="name" placeholder="Your name">
+            <hr>
+        </div>
+        <div>
+            <label for="last">Last Name:</label>
+            <input formControlName="last" placeholder="Your lastname">
+            <hr>
+        </div>
+
+        <button type="submit" [disabled]="myForm.invalid">Submit</button>
     </form>
 </ion-card>

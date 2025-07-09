@@ -1,41 +1,61 @@
-ion-icon {
-    padding: 5px;
-    }
-.tittle {
-        font-size: 30px;
-        font-weight: bold;
-        text-align: left;
-        padding-left: 11% !important;
-    }
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  font-family: inter;
+}
 
-    // .swipper{
-    //     overflow-y: hidden;
-    //     overflow-x: scroll;
-    //     white-space: nowrap;
-    
-    //     .col{
-    //         display: inline-block;
-    //     }
-    // }
-.swiper::-webkit-scrollbar {
-        width: 0%;
-        height: 0%;
-    }
-    .swiper {
-        overflow-y: hidden;
-        overflow-x: scroll;
-        white-space: nowrap;
-    }
-    
+label {
+  display: block;
+  font-size: large;
+  font-weight: 500;
+  font-family: inter;
+  color: black;
+  margin-bottom: 4px;
+}
 
-.swiper-slide {
-    display: inline-block;
-        flex: 0 0 auto;
-        margin-right: 10px; /* Optional: add margin between avatars */
-    }    
+input[formControlName] {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  color: black;
+  background-color: rgb(205, 205, 205);
+  border: none;
+  outline: none;
+}
 
-    .col{
-        display: inline-block;
-        height: 70px;
-        width: 70px;
-    }
+hr {
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+button[type="submit"]:disabled {
+  background-color: #a5d6a7;
+  cursor: not-allowed;
+}
+
+div.ng-invalid.ng-touched input {
+  border-bottom: 2px solid red;
+}
+
+ion-card {
+  background: rgba(255, 255, 255, 0.512);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.6px);
+  -webkit-backdrop-filter: blur(5.6px);
+  border: 1px solid rgba(255, 255, 255, 0.62);
+}
