@@ -14,16 +14,16 @@ export class Tab2Page {
 
   ngOnInit() {
     this.myForm = this.fb.group({
-      row: [{ value: '', disabled: true }, Validators.required],
-      col: [{ value: '', disabled: true }, Validators.required],
+      row: [{ value: '1', disabled: true }, Validators.required],
+      col: [{ value: '2', disabled: true }, Validators.required],
       empcode: ['', [Validators.required]],
-      name: [{ value: '', disabled: true }, Validators.required],
+      name: [{ value: 'Ansh', disabled: true }, Validators.required],
       last: [{ value: '', disabled: true }]
     });
   }
 
   onSubmit(form: FormGroup) {
-    console.log(form.value);
+    console.log(form.getRawValue());
 
   }
 
