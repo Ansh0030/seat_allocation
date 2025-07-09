@@ -4,13 +4,13 @@
 
             <div>
                 <label for="row">Row No:</label>
-                <input formControlName="row" placeholder="Row">
+                <input formControlName="row" placeholder="Row" [disabled]="true">
                 <hr>
             </div>
 
             <div>
                 <label for="col">Column No:</label>
-                <input formControlName="col" placeholder="Column">
+                <input formControlName="col" placeholder="Column" [disabled]="true">
                 <hr>
             </div>
 
@@ -26,12 +26,13 @@
 
             <div>
                 <label for="name">Name:</label>
-                <input formControlName="name" placeholder="Your name">
+                <input formControlName="name" placeholder="Your name" [disabled]="true">
                 <hr>
             </div>
+
             <div>
                 <label for="last">Last Name:</label>
-                <input formControlName="last" placeholder="Your lastname">
+                <input formControlName="last" placeholder="Your lastname" [disabled]="true">
                 <hr>
             </div>
 

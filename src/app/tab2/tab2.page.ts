@@ -14,11 +14,11 @@ export class Tab2Page {
 
   ngOnInit() {
     this.myForm = this.fb.group({
-      row: ['', Validators.required],
-      col: ['', Validators.required],
+      row: [{ value: '', disabled: true }, Validators.required],
+      col: [{ value: '', disabled: true }, Validators.required],
       empcode: ['', [Validators.required]],
-      name: ['', Validators.required],
-      last: [''],
+      name: [{ value: '', disabled: true }, Validators.required],
+      last: [{ value: '', disabled: true }]
     });
   }
 
