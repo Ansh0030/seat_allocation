@@ -1,9 +1,13 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+// :root {
+//   --ion-background-color: linear-gradient(
+//     1deg,
+//     rgba(115, 138, 255, 1) 0%,
+//     rgba(237, 69, 127, 1) 65%
+//   );
+// }
+
 :root {
-  --ion-background-color: linear-gradient(
-    1deg,
-    rgba(115, 138, 255, 1) 0%,
-    rgba(237, 69, 127, 1) 65%
-  );
+  --ion-background-color: #ffffffd7;
 }
