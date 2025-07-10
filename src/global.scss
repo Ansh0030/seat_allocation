@@ -35,3 +35,18 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 // @import "@ionic/angular/css/palettes/dark.system.css";
+ion-content {
+  --offset-bottom: auto !important;
+  //   --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  --background: var(--ion-background-color);
+}
+:root {
+  --ion-background-color: #ffffffd7 !important;
+}
+ion-content {
+  background-color: #ffffffd7;
+}

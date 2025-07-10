@@ -26,7 +26,7 @@ export class TableComponent {
     return letters[this.colNo - 1];
   }
 
-  async onClick() {
+  async onClickAlert() {
     if (!this.isBooked) {
       const alert = await this.alertController.create({
         header: 'Do you want to Allcoate this Table?',

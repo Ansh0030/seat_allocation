@@ -3,14 +3,14 @@
   <div [id]="isBooked ? 'popover-trigger-' + rowNo + '-' + colNo : null" class="table-layout" [ngStyle]="{
       'background-color': isBooked ? '#cb3d3f' : '#31b941',
       'cursor': isBooked ? 'not-allowed' : 'pointer'
-    }" (click)="onClick()">
+    }" (click)="onClickAlert()">
     <div class="seat-label">{{ seatLabel }}</div>
   </div>
 
   <div class="chair-layout" [ngStyle]="{
       'background-color': isBooked ? '#cb3d3f' : '#31b941',
       'cursor': isBooked ? 'not-allowed' : 'pointer'
-    }" (click)="onClick()"></div>
+    }" (click)="onClickAlert()"></div>
 
   <ion-popover mode="ios" *ngIf="isBooked" [trigger]="'popover-trigger-' + rowNo + '-' + colNo" triggerAction="hover">
     <ng-template>
