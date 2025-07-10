@@ -1,14 +1,14 @@
 <div class="table-wrapper">
 
   <div [id]="isBooked ? 'popover-trigger-' + rowNo + '-' + colNo : null" class="table-layout" [ngStyle]="{
-      'background-color': isBooked ? '#cb3d3f' : '#31b941',
+      'background-color': isBooked ? '#ff5659' : '#63c86f',
       'cursor': isBooked ? 'not-allowed' : 'pointer'
     }" (click)="onClickAlert()">
     <div class="seat-label">{{ seatLabel }}</div>
   </div>
 
   <div class="chair-layout" [ngStyle]="{
-      'background-color': isBooked ? '#cb3d3f' : '#31b941',
+      'background-color': isBooked ? '#ff5659' : '#63c86f',
       'cursor': isBooked ? 'not-allowed' : 'pointer'
     }" (click)="onClickAlert()"></div>
 
