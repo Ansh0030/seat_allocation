@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Tab1Page } from './tab1/tab1.page';
-import { Router } from "@angular/router"
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,26 +7,32 @@ import { Router } from "@angular/router"
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private router: Router) {
-    this.onClick('tab1');
-  }
-
-  layout1: boolean = false;
-
   activeTab = 'tab1';
+  isSearchActive = false;
+  isLogin: boolean = false;
+
+  constructor(private router: Router) { }
+
+  ngOnInit() {
+    this.isLogin = JSON.parse(localStorage.getItem('isLogin') || 'false');
+
+    if (this.isLogin) {
+      this.router.navigate(['/tab1']);
+    } else {
+      this.router.navigate(['/login']);
+    }
+  }
 
   switchtab(tab: string) {
     this.activeTab = tab;
     this.router.navigate([`/${tab}`]);
   }
 
-  isSearchActive: boolean = false;
+  onClick(tab: string) {
+    this.switchtab(tab);
+  }
 
   searchClicked(e: boolean) {
     this.isSearchActive = e;
-  }
-
-  onClick(tab: String) {
-    this.switchtab('tab1');
   }
 }

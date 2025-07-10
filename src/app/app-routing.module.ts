@@ -4,17 +4,16 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    children: [
-      {
-        path: 'tab1',
-        loadChildren: () => import('../app/tab1/tab1.module').then(m => m.Tab1PageModule)
-      },
-      {
-        path: 'tab2',
-        loadChildren: () => import('../app/tab2/tab2.module').then(m => m.Tab2PageModule)
-      },
-
-    ]
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
+  {
+    path: 'tab1',
+    loadChildren: () => import('../app/tab1/tab1.module').then(m => m.Tab1PageModule)
+  },
+  {
+    path: 'tab2',
+    loadChildren: () => import('../app/tab2/tab2.module').then(m => m.Tab2PageModule)
   },
   {
     path: 'login',

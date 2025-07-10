@@ -12,7 +12,7 @@
 
   <ion-router-outlet></ion-router-outlet>
 
-  <ion-grid style="display: flex; justify-content: center; align-items: flex-end;">
+  <ion-grid *ngIf="isLogin !== true" style="display: flex; justify-content: center; align-items: flex-end;">
     <ion-row>
       <ion-col size="4" sizeXs="0" sizeSm="0"></ion-col>
       <ion-col size="4" sizeXs="12" sizeSm="12">
