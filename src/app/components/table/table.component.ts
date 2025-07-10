@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 import { User } from 'src/app/tab1/tab1.page';
-
 
 @Component({
   selector: 'app-table',
@@ -15,14 +16,39 @@ export class TableComponent {
 
   @Output() tableClicked = new EventEmitter<void>();
 
-  onClick() {
-    if (!this.isBooked) {
-      this.tableClicked.emit();
-    }
-  }
+  constructor(
+    private alertController: AlertController,
+    private router: Router
+  ) { }
+
   get seatLabel(): string {
     const letters = 'ABCDEFGHIJKL';
     return letters[this.colNo - 1];
   }
 
+  async onClick() {
+    if (!this.isBooked) {
+      const alert = await this.alertController.create({
+        header: 'Do you want to book this chair?',
+        message: `Row: ${this.rowNo}, Seat: ${this.colNo} (${this.seatLabel})`,
+        mode: 'ios',
+        buttons: [
+          {
+            text: 'Cancel',
+            role: 'cancel'
+          },
+          {
+            text: 'OK',
+            handler: () => {
+              this.router.navigate(['/tab2'], {
+                queryParams: { row: this.rowNo, col: this.colNo }
+              });
+            }
+          }
+        ]
+      });
+
+      await alert.present();
+    }
+  }
 }

@@ -1,20 +1,25 @@
-<div id="hover-trigger" class="table-layout" [ngStyle]="{
-  'background-color': isBooked ? '#cb3d3f' : '#31b941',
-  'cursor': isBooked ? 'not-allowed' : 'pointer'}" (click)="onClick()">
-  <div class="seat-label">{{ seatLabel }}</div>
-</div>
+<div class="table-wrapper">
 
-<div class="chair-layout" [ngStyle]="{
-'background-color': isBooked ? '#cb3d3f' : '#31b941',
-'cursor': isBooked ? 'not-allowed' : 'pointer'}" (click)="onClick()">
-</div>
+  <div [id]="isBooked ? 'popover-trigger-' + rowNo + '-' + colNo : null" class="table-layout" [ngStyle]="{
+      'background-color': isBooked ? '#cb3d3f' : '#31b941',
+      'cursor': isBooked ? 'not-allowed' : 'pointer'
+    }" (click)="onClick()">
+    <div class="seat-label">{{ seatLabel }}</div>
+  </div>
 
-<ion-popover trigger="hover-trigger" triggerAction="hover">
-  <ng-template>
-    <ion-content class="ion-padding">
-      Reserved by: {{bookedBy?.name}}<br>
-      Row: {{rowNo}}<br>
-      Seat no: {{colNo}} ({{ seatLabel }})
-    </ion-content>
-  </ng-template>
-</ion-popover>
+  <div class="chair-layout" [ngStyle]="{
+      'background-color': isBooked ? '#cb3d3f' : '#31b941',
+      'cursor': isBooked ? 'not-allowed' : 'pointer'
+    }" (click)="onClick()"></div>
+
+  <ion-popover *ngIf="isBooked" [trigger]="'popover-trigger-' + rowNo + '-' + colNo" triggerAction="hover">
+    <ng-template>
+      <ion-content class="ion-padding">
+        <div><strong>Reserved by:</strong> {{ bookedBy?.name || 'Unknown' }}</div>
+        <div><strong>Row:</strong> {{ rowNo }}</div>
+        <div><strong>Seat no:</strong> {{ colNo }} ({{ seatLabel }})</div>
+      </ion-content>
+    </ng-template>
+  </ion-popover>
+
+</div>
