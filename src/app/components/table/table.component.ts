@@ -30,7 +30,7 @@ export class TableComponent {
     if (!this.isBooked) {
       const alert = await this.alertController.create({
         header: 'Do you want to Allcoate this Table?',
-        message: `Row: ${this.rowNo}, Seat: ${this.colNo} (${this.seatLabel})`,
+        message: `Row:${this.rowNo}, Seat:${this.seatLabel} (${this.colNo})`,
         mode: 'ios',
         buttons: [
           {
