@@ -10,6 +10,7 @@ import { AuthServiceService } from './auth-service.service';
 export class AppComponent {
   activeTab = 'login';
   isSearchActive = false;
+  isLogin !: boolean;
 
   constructor(
     private router: Router,
@@ -18,6 +19,7 @@ export class AppComponent {
 
   ngOnInit() {
     this.authService.loggedIn$.subscribe((isLoggedIn) => {
+      this.isLogin = isLoggedIn;
       console.log(isLoggedIn);
 
       if (isLoggedIn) {
@@ -32,16 +34,16 @@ export class AppComponent {
     this.authService.setLoggedIn(false);
   }
 
-  // switchtab(tab: string) {
-  //   this.activeTab = tab;
-  //   this.router.navigate([`/${tab}`]);
-  // }
+  switchtab(tab: string) {
+    this.activeTab = tab;
+    this.router.navigate([`/${tab}`]);
+  }
 
-  // onClick(tab: string) {
-  //   this.switchtab(tab);
-  // }
+  onClick(tab: string) {
+    this.switchtab(tab);
+  }
 
-  // searchClicked(e: boolean) {
-  //   this.isSearchActive = e;
-  // }
+  searchClicked(e: boolean) {
+    this.isSearchActive = e;
+  }
 }
