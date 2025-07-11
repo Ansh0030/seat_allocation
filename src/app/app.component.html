@@ -2,9 +2,12 @@
   <div>
     <ion-toolbar>
       <ion-title
-        style="padding: 1% !important; --color:black; margin-left: 10px; font-family: inter; font-weight: bold;"
+        style="padding: 1% !important; --color:black; margin-left: 10px; font-family: inter; font-weight: 600; display: flex;"
         *ngIf="!isSearchActive" class="tittle">
-        Seat Allocation
+        <span style="display: flex;">
+          <img style="height: 30px; width: 60px;" src="../assets/MPC_LOGO.png">
+          Seat Allocation
+        </span>
       </ion-title>
       <ion-buttons *ngIf="isLogin" slot="end">
         <ion-button (click)="logout()">

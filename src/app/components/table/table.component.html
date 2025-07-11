@@ -15,7 +15,7 @@
   <ion-popover mode="ios" *ngIf="isBooked" [trigger]="'popover-trigger-' + rowNo + '-' + colNo" triggerAction="hover">
     <ng-template>
       <ion-content class="ion-padding">
-        <div><strong>Reserved by:</strong> {{ bookedBy?.name || 'Unknown' }}</div>
+        <div><strong>Allocated to:</strong> {{ bookedBy?.name || 'Unknown' }}</div>
         <div><strong>Row:</strong> {{ rowNo }}</div>
         <div style="margin-bottom: 10px;"><strong>Seat no:</strong> {{ colNo }} ({{ seatLabel }})</div>
       </ion-content>
