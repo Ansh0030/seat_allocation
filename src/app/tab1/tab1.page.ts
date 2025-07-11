@@ -18,7 +18,7 @@ export interface Table {
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit {
 
   users: User[] = [
     { empId: "1", name: 'Alice', email: 'alice@company.com' },
