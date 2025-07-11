@@ -7,32 +7,27 @@ import { Router } from '@angular/router';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  activeTab = 'tab1';
+  activeTab = 'login';
   isSearchActive = false;
   isLogin: boolean = false;
 
   constructor(private router: Router) { }
 
   ngOnInit() {
-    this.isLogin = JSON.parse(localStorage.getItem('isLogin') || 'false');
-
-    if (this.isLogin) {
-      this.router.navigate(['/tab1']);
-    } else {
-      this.router.navigate(['/login']);
-    }
+    this.router.navigate(['/login']);
   }
 
-  switchtab(tab: string) {
-    this.activeTab = tab;
-    this.router.navigate([`/${tab}`]);
-  }
 
-  onClick(tab: string) {
-    this.switchtab(tab);
-  }
+  // switchtab(tab: string) {
+  //   this.activeTab = tab;
+  //   this.router.navigate([`/${tab}`]);
+  // }
 
-  searchClicked(e: boolean) {
-    this.isSearchActive = e;
-  }
+  // onClick(tab: string) {
+  //   this.switchtab(tab);
+  // }
+
+  // searchClicked(e: boolean) {
+  //   this.isSearchActive = e;
+  // }
 }
