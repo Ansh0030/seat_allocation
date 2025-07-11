@@ -6,6 +6,13 @@
         *ngIf="!isSearchActive" class="tittle">
         Seat Allocation
       </ion-title>
+
+      <!-- ✅ FIXED BUTTON -->
+      <ion-buttons slot="end">
+        <ion-button (click)="logout()">
+          <ion-icon name="log-out-outline" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-buttons>
     </ion-toolbar>
   </div>
 

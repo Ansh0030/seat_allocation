@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthServiceService } from '../auth-service.service';
 
 @Component({
   selector: 'app-login',
@@ -8,11 +9,13 @@ import { Router } from '@angular/router';
 })
 export class LoginPage {
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private authService: AuthServiceService
+  ) { }
 
   login() {
-    localStorage.setItem('isLogin', JSON.stringify(true));
-    this.router.navigate(['/tab1']);
+    this.authService.setLoggedIn(true);
   }
 
 }

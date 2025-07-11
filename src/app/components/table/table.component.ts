@@ -29,9 +29,10 @@ export class TableComponent {
   async onClickAlert() {
     if (!this.isBooked) {
       const alert = await this.alertController.create({
-        header: 'Do you want to Allcoate this Table?',
-        message: `Row:${this.rowNo}, Seat:${this.seatLabel} (${this.colNo})`,
+        header: 'Do you want to Allocate this Table?',
+        message: `Row: ${this.rowNo}, Seat: ${this.seatLabel} (${this.colNo})`,
         mode: 'ios',
+        cssClass: 'glass-alert',
         buttons: [
           {
             text: 'Cancel',
@@ -47,6 +48,7 @@ export class TableComponent {
           }
         ]
       });
+
 
       await alert.present();
     }

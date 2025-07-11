@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthServiceService } from './auth-service.service';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +10,27 @@ import { Router } from '@angular/router';
 export class AppComponent {
   activeTab = 'login';
   isSearchActive = false;
-  isLogin: boolean = false;
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private authService: AuthServiceService
+  ) { }
 
   ngOnInit() {
-    this.router.navigate(['/login']);
+    this.authService.loggedIn$.subscribe((isLoggedIn) => {
+      console.log(isLoggedIn);
+
+      if (isLoggedIn) {
+        this.router.navigate(['/tab1']);
+      } else {
+        this.router.navigate(['/login']);
+      }
+    });
   }
 
+  logout() {
+    this.authService.setLoggedIn(false);
+  }
 
   // switchtab(tab: string) {
   //   this.activeTab = tab;
