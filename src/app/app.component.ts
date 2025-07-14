@@ -32,10 +32,6 @@ export class AppComponent {
     });
   }
 
-  // logout() {
-  //   this.authService.setLoggedIn(false);
-  // }
-
   async logout() {
     const alert = await this.alertController.create({
       header: 'Do you want to logout?',
