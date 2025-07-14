@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 export interface User {
   empId: string;
   name: string;
+  lastName?: string;
   email: string;
 }
 

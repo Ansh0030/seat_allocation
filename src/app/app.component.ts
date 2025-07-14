@@ -59,7 +59,7 @@ export class AppComponent {
     this.router.navigate([`/${tab}`]);
   }
 
-  onClick(tab: string) {
+  onClick() {
     if (!!this.isLogin) {
       this.router.navigate(['/tab1']);
     } else {
