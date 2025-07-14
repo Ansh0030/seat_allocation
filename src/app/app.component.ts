@@ -9,7 +9,7 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  activeTab = 'login';
+  activeTab = 'tab1';
   isSearchActive = false;
   isLogin !: boolean;
 
@@ -64,7 +64,11 @@ export class AppComponent {
   }
 
   onClick(tab: string) {
-    this.switchtab(tab);
+    if (!!this.isLogin) {
+      this.router.navigate(['/tab1']);
+    } else {
+      this.router.navigate(['/login'])
+    }
   }
 
   searchClicked(e: boolean) {
