@@ -48,8 +48,6 @@ export class TableComponent {
           }
         ]
       });
-
-
       await alert.present();
     }
   }
