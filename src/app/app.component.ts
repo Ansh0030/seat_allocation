@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthServiceService } from './auth-service.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ export class AppComponent {
 
   constructor(
     private router: Router,
-    private authService: AuthServiceService
+    private authService: AuthServiceService,
+    private alertController: AlertController
   ) { }
 
   ngOnInit() {
@@ -30,8 +32,30 @@ export class AppComponent {
     });
   }
 
-  logout() {
-    this.authService.setLoggedIn(false);
+  // logout() {
+  //   this.authService.setLoggedIn(false);
+  // }
+
+  async logout() {
+    const alert = await this.alertController.create({
+      header: 'Do you want to logout?',
+      mode: 'ios',
+      cssClass: 'glass-alert',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        },
+        {
+          text: 'OK',
+          handler: () => {
+            this.authService.setLoggedIn(false);
+          }
+        }
+      ]
+    });
+    await alert.present();
+
   }
 
   switchtab(tab: string) {
