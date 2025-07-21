@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthServiceService } from './auth-service.service';
 import { AlertController } from '@ionic/angular';
+import { AuthServiceService } from './service/auth-service.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   activeTab = 'tab1';
   isSearchActive = false;
   isLogin !: boolean;
