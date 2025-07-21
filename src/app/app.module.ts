@@ -7,6 +7,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
 
@@ -17,7 +18,7 @@ import { StoreModule } from '@ngrx/store';
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, StoreModule.forRoot({}, {})
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, provideAnimationsAsync('noop')],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
