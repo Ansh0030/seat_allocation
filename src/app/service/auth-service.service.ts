@@ -10,7 +10,7 @@ export class AuthServiceService {
   private loggedInSubject = new BehaviorSubject<boolean>(this.getInitialStatus());
   loggedIn$ = this.loggedInSubject.asObservable();
 
-  constructor(private httpclient: HttpClient) { }
+  constructor() { }
 
   private getInitialStatus(): boolean {
     const raw = localStorage.getItem('isLoggedIn');
