@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
@@ -9,7 +10,7 @@ export class AuthServiceService {
   private loggedInSubject = new BehaviorSubject<boolean>(this.getInitialStatus());
   loggedIn$ = this.loggedInSubject.asObservable();
 
-  constructor() { }
+  constructor(private httpclient: HttpClient) { }
 
   private getInitialStatus(): boolean {
     const raw = localStorage.getItem('isLoggedIn');
